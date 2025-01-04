@@ -62,12 +62,8 @@ f1 = f1_score(y_test, binary_predictions)
 ```
 
 Confusion Matrix:
-+----------------+-----------------+
-|                | Predicted       |
-|                | Non-Toxic | Toxic |
-+----------------+-----------------+
-| Actual         |               |       |
-| Non-Toxic      |    216        |  22   |
-| Toxic          |    20         |   7   |
-+----------------+-----------------+
+|                | Predicted Non-Toxic | Predicted Toxic |
+|----------------|---------------------|-----------------|
+| Actual Non-Toxic |         216         |        22       |
+| Actual Toxic     |         20          |         7       |
 
