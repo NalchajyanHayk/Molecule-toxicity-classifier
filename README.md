@@ -61,9 +61,33 @@ roc_auc = roc_auc_score(y_test, predictions)
 f1 = f1_score(y_test, binary_predictions)
 ```
 
-Confusion Matrix:
+## Confusion Matrix:
 |                | Predicted Non-Toxic | Predicted Toxic |
 |----------------|---------------------|-----------------|
 | Actual Non-Toxic |         216         |        22       |
 | Actual Toxic     |         20          |         7       |
+
+## Conclusion
+
+The current model, based on a 1D Convolutional Neural Network (CNN), shows some promise in classifying molecules as toxic or non-toxic. However, the performance metrics, including the F1-score, indicate that there is room for improvement. Here are some key conclusions and insights:
+
+Key Insights for Improvement:
+1. Class Imbalance:
+
+The model faces a class imbalance between toxic and non-toxic molecules, with significantly more non-toxic samples. Despite the augmentation of toxic samples, the F1-score is still low, suggesting that the model is not learning to identify toxic molecules well.
+Improvement: Implement techniques like SMOTE (Synthetic Minority Over-sampling Technique) to create synthetic toxic samples, or try other sampling methods such as undersampling non-toxic molecules. Alternatively, experiment with class weights in the loss function to penalize misclassifying toxic molecules more heavily.
+Model Architecture:
+
+The current model uses a relatively simple CNN with three convolution layers and fully connected layers. While this can work well for certain tasks, more complex architectures could improve performance.
+Improvement: Experiment with deeper architectures, such as adding more convolutional layers or utilizing ResNet or DenseNet architectures. These models help in training deeper networks by addressing the vanishing gradient problem and improving feature extraction.
+Model Evaluation:
+
+The model’s evaluation is based on accuracy, ROC-AUC, F1-score, and confusion matrix. However, additional evaluation metrics, such as precision and recall, could provide a more comprehensive understanding of performance.
+Improvement: Track precision, recall, and specificity for both toxic and non-toxic classes to ensure the model’s robustness across both classes.
+Final Recommendations:
+To improve the model’s performance in predicting toxic molecules:
+
+Address class imbalance more effectively.
+Experiment with more advanced models and architectures.
+Expand evaluation metrics to include precision, recall, and specificity.
 
