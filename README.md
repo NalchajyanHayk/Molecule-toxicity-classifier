@@ -50,3 +50,24 @@ To train the model, we use the following function:
 ```python
 def train_cnn(X_train, y_train, input_length, num_epochs=20, batch_size=32, learning_rate=0.001, dropout_rate=0.3):
     # Function implementation
+```
+
+## Evaluation
+After training the model, you can evaluate its performance using the test data. The model's accuracy and ROC-AUC score are computed. Additionally, the confusion matrix is displayed to show how well the model distinguishes between toxic and non-toxic molecules.
+
+```python
+accuracy = accuracy_score(y_test, binary_predictions)
+roc_auc = roc_auc_score(y_test, predictions)
+f1 = f1_score(y_test, binary_predictions)
+```
+
+Confusion Matrix:
++----------------+-----------------+
+|                | Predicted       |
+|                | Non-Toxic | Toxic |
++----------------+-----------------+
+| Actual         |               |       |
+| Non-Toxic      |    216        |  22   |
+| Toxic          |    20         |   7   |
++----------------+-----------------+
+
