@@ -6,9 +6,9 @@ This project implements a 1D Convolutional Neural Network (CNN) for classifying 
 Dependencies
 The following libraries are required to run the code:
 
-# torch
-# pandas
-# numpy
-# scikit-learn
-# matplotlib
-# rdkit
+### torch
+### pandas
+### numpy
+### scikit-learn
+### matplotlib
+### rdkit
